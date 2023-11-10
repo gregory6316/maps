@@ -10927,11 +10927,11 @@ Expecting ` + U.join(", ") + ", got '" + (this.terminals_[H] || H) + "'" : X = "
             return "top-right"
         }
         createLayerCheckbox(e) {
-            var a, b;
+            var a;
             if (!this.options.showCheckbox) return;
             const t = (s, l) => {
-                    var c, p, d, e;
-                    l ? (this.uncheckedLayers[s] && delete this.uncheckedLayers[s], (c = this.map) == null || c.setLayoutProperty(s, "visibility", "visible"), (d = this.mapb) == null || d.setLayoutProperty(s, "visibility", "visible")) : (this.uncheckedLayers[s] = s, (e = this.mapb) == null || e.setLayoutProperty(s, "visibility", "none"));
+                    var c, p;
+                    l ? (this.uncheckedLayers[s] && delete this.uncheckedLayers[s], (c = this.map) == null || c.setLayoutProperty(s, "visibility", "visible")) : (this.uncheckedLayers[s] = s, (p = this.map) == null || p.setLayoutProperty(s, "visibility", "none"));
                     const u = document.getElementsByName(s);
                     for (const d in u) typeof u[d] != "number" && (u[d].checked = l)
                 },
@@ -10953,7 +10953,6 @@ Expecting ` + U.join(", ") + ", got '" + (this.terminals_[H] || H) + "'" : X = "
                 }
                 t(e.id, s)
             }
-            
             return i.addEventListener("click", function(s) {
                 var c, p;
                 const l = (c = s.target) == null ? void 0 : c.value,
