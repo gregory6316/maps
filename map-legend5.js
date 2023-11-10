@@ -10930,8 +10930,9 @@ Expecting ` + U.join(", ") + ", got '" + (this.terminals_[H] || H) + "'" : X = "
             var a;
             if (!this.options.showCheckbox) return;
             const t = (s, l) => {
-                    var c, p;
+                    var c, p, cc, pp;
                     l ? (this.uncheckedLayers[s] && delete this.uncheckedLayers[s], (c = this.map) == null || c.setLayoutProperty(s, "visibility", "visible")) : (this.uncheckedLayers[s] = s, (p = this.map) == null || p.setLayoutProperty(s, "visibility", "none"));
+                    l ? (this.uncheckedLayers[s] && delete this.uncheckedLayers[s], (cc = this.mapb) == null || cc.setLayoutProperty(s, "visibility", "visible")) : (this.uncheckedLayers[s] = s, (pp = this.mapb) == null || pp.setLayoutProperty(s, "visibility", "none"));
                     const u = document.getElementsByName(s);
                     for (const d in u) typeof u[d] != "number" && (u[d].checked = l)
                 },
