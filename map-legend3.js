@@ -10953,20 +10953,7 @@ Expecting ` + U.join(", ") + ", got '" + (this.terminals_[H] || H) + "'" : X = "
                 }
                 t(e.id, s)
             }
-            const oo = (b = this.mapb) == null ? void 0 : b.getLayoutProperty(e.id, "visibility");
-            if (!oo) i.checked = !0;
-            else {
-                let s = !0;
-                switch (oo) {
-                    case "none":
-                        s = !1;
-                        break;
-                    case "visible":
-                        s = !0, i.checked = !0;
-                        break
-                }
-                t(e.id, s)
-            }
+            
             return i.addEventListener("click", function(s) {
                 var c, p;
                 const l = (c = s.target) == null ? void 0 : c.value,
