@@ -10898,9 +10898,10 @@ Expecting ` + U.join(", ") + ", got '" + (this.terminals_[H] || H) + "'" : X = "
         gl = yl;
     const bl = us(gl);
     class vl {
-        constructor(e, t) {
+        constructor(e, t, mb) {
             ue(this, "controlContainer");
             ue(this, "map");
+            ue(this, "mapb");
             ue(this, "legendContainer");
             ue(this, "legendButton");
             ue(this, "closeButton");
@@ -10920,16 +10921,17 @@ Expecting ` + U.join(", ") + ", got '" + (this.terminals_[H] || H) + "'" : X = "
                 json: JSON
             });
             this.targets = e, t && (this.options = Object.assign(this.options, t)), this.onlyRendered = this.options.onlyRendered, this.onDocumentClick = this.onDocumentClick.bind(this)
+            this.mapb = mb
         }
         getDefaultPosition() {
             return "top-right"
         }
         createLayerCheckbox(e) {
-            var a;
+            var a, b;
             if (!this.options.showCheckbox) return;
             const t = (s, l) => {
-                    var c, p;
-                    l ? (this.uncheckedLayers[s] && delete this.uncheckedLayers[s], (c = this.map) == null || c.setLayoutProperty(s, "visibility", "visible")) : (this.uncheckedLayers[s] = s, (p = this.map) == null || p.setLayoutProperty(s, "visibility", "none"));
+                    var c, p, d, e;
+                    l ? (this.uncheckedLayers[s] && delete this.uncheckedLayers[s], (c = this.map) == null || c.setLayoutProperty(s, "visibility", "visible"), (d = this.mapb) == null || d.setLayoutProperty(s, "visibility", "visible")) : (this.uncheckedLayers[s] = s, (e = this.mapb) == null || e.setLayoutProperty(s, "visibility", "none"));
                     const u = document.getElementsByName(s);
                     for (const d in u) typeof u[d] != "number" && (u[d].checked = l)
                 },
@@ -10938,6 +10940,20 @@ Expecting ` + U.join(", ") + ", got '" + (this.terminals_[H] || H) + "'" : X = "
             const i = document.createElement("input");
             i.setAttribute("type", "checkbox"), i.setAttribute("name", e.id), i.setAttribute("value", e.id);
             const o = (a = this.map) == null ? void 0 : a.getLayoutProperty(e.id, "visibility");
+            if (!o) i.checked = !0;
+            else {
+                let s = !0;
+                switch (o) {
+                    case "none":
+                        s = !1;
+                        break;
+                    case "visible":
+                        s = !0, i.checked = !0;
+                        break
+                }
+                t(e.id, s)
+            }
+            const o = (b = this.mapb) == null ? void 0 : b.getLayoutProperty(e.id, "visibility");
             if (!o) i.checked = !0;
             else {
                 let s = !0;
