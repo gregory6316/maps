@@ -10953,11 +10953,11 @@ Expecting ` + U.join(", ") + ", got '" + (this.terminals_[H] || H) + "'" : X = "
                 }
                 t(e.id, s)
             }
-            const o = (b = this.mapb) == null ? void 0 : b.getLayoutProperty(e.id, "visibility");
-            if (!o) i.checked = !0;
+            const oo = (b = this.mapb) == null ? void 0 : b.getLayoutProperty(e.id, "visibility");
+            if (!oo) i.checked = !0;
             else {
                 let s = !0;
-                switch (o) {
+                switch (oo) {
                     case "none":
                         s = !1;
                         break;
